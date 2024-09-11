@@ -2,18 +2,19 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
+
+if N == 0:
+    print(0)
+    exit()
+
 score = []
 for _ in range(N):
     score.append(int(input()))
 score = sorted(score)
 result = 0
 
-if N == 0:
-    print(0)
-    exit()
 
 N_rest = N * 15 / 100
-# print(N_rest)
 _, mod = divmod(N_rest, 1)
 if mod >= 0.5:
     N_rest += 1
